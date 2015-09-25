@@ -4,7 +4,7 @@ void setup()
 {
   background(0,0,0);
   size(500,500);
-  bob = new Snowflake[100];
+  bob = new Snowflake[50];
   for(int i = 0; i<bob.length; i++)
   {
     int myX = (int)(Math.random()*500);
@@ -54,7 +54,7 @@ class Snowflake
   }
   void lookDown()
   {
-    if(myY>0 && myY<500 && get(myX,myY+5) == color(0,0,255))
+    if(myY>0 && myY<500 && get(myX,myY+5)!=color(0,0,0))
     {
       isMoving = false;
     }
@@ -77,7 +77,7 @@ class Snowflake
   }
   void wrap()
   {
-    if(myY>498)
+    if(myY>490)
     {
       myY = 0;
       myX = (int)(Math.random()*500);
